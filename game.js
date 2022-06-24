@@ -21,7 +21,7 @@ function playRound () {
     let computerChoice = computerPlay();
 
     console.log(playerChoice);
-//gives player feedback
+//tells player if their input was valid
         if (playerChoice != 'rock'){
         }
         else if (playerChoice != 'paper'){
@@ -31,10 +31,9 @@ function playRound () {
         else {
             console.log('try again, invalid input');
         }
-
         console.log('Computer:' + computerChoice);
-        
-
+//determines who won each round
+//adds score to the winner of each round
     if (computerChoice == playerChoice) {
         console.log('tie!');
     }
@@ -64,6 +63,7 @@ function playRound () {
     }
     return playerScore;
 }
+//runs playRound 5 times and determines who won the game
 function game () {
     for (let i = 0; i < 5; i++) {
     playRound ();
@@ -81,6 +81,5 @@ function game () {
     else if ( playerScore == computerScore){
         console.log('It was a tie!');
     }
-}
-    
+}    
 button.addEventListener('click', game);
